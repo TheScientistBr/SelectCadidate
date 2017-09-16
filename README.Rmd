@@ -1,0 +1,26 @@
+---
+title: "RH e a Seleção de Candidatos"
+subtitle: "Uma abordagem em tempo de Big data"
+author: "Delermando Branquinho Filho"
+date: "15 de setembro de 2017"
+output: md_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Tenho observado e conversado com diversos profissionais de RH que me confidenciaram suas dificuldades em relação ao processo seletivo que ocorre hoje em dia (chororó de pitangas). O problema é que uma vaga anunciada recebe, via de regra, seja no LinedIn ou outros meios de divulgação, centenas de candidaturas. Em algumas profissões isso chega a ficar entre 1500 até 2000 candidaturas.
+
+Ao multiplicar as vagas disponíveis por cada uma dessas candidaturas, o volume de tratamento de dados que as equipes de recrutamento e seleção estão fazendo, nesses tempos de Big Data, é inumano. Ao me sensibilizar com a dificuldade, fiz uma pergunta bem simples: Você tem todos os currículos dos selecionados ou não para as vagas? Por exemplo: Gerente de Projetos em TI, Desenvolvedor Java Sênior e etc.
+
+Através de colegas (Gestores de RH) consegui 540 currículos separados em cinco pastas cujo o nome era a posição ofertada (Gerente de Projetos em TI, Desenvolvedor Java Sênior e etc). Todos os currículos de processos seletivos anteriores e já concluídos. Os currículos sem qualquer identificação (nome do candidato ou outro tipo de dado pessoal) estavam marcados como selecionado ou não selecionado. Isso quer dizer que os profissionais de RH selecionaram esses candidatos para as fases posteriores ou não.
+
+A prática de buscas por palavra-chave, sem uma inteligência para melhorar a assertividade, pode deixar muitos profissionais de fora dessa seleção, sem contar que a maioria das pessoas tem dificuldades em fazer um currículo que seja atrativo, ou melhor, dentro das expectativas dos Headhunters. Se isso é inverídico, então não teríamos tantos ensinamentos aqui mesmo no LinkedIn a respeito desse assunto. ;o)
+
+Pois bem, algumas questões técnicas serão reduzidas aqui para o pessoal não técnico, mas indicarei como foi feito para os profissionais em Data Science para ajudar o seu RH.
+O primeiro passo foi estabelecer uma métrica para todos os textos dos currículos, eu escolhi usar o TF-IDF (Term Frequency – Inverted Document Frequency). Criei os centroides de cada classe (cargo) com toda a base de dados, sendo que 70% para treino e 30% para teste. A acurácia do modelo está representada na tabela abaixo, sendo que o valor máximo é 1 (100%):
+
+
+Em uma interpretação simplória desses resultados quer dizer que se você recebeu 800 currículos, o modelo pode te entregar os currículos para a próxima fase com 92% de assertividade. 
+Se você tem a mesma dificuldade, procure a TI e peça para o Cientista de Dados que pense em um projeto assim. Só não pense que isso substitui o profissional de RH, lembre-se isso é uma ferramenta de apoio à decisão e não um substituto autômato.
